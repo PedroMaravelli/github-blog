@@ -13,6 +13,7 @@ interface UserContextProps{
     followers: number
     bio: string
     issues:issues[]
+    fetchSearchIssues: (query?: string) => void;
 
 }
 interface UserProviderProps{
@@ -33,28 +34,14 @@ export function UserProvider({ children }: UserProviderProps){
 
 
 
-    function getName () {
+    function getUserInfos () {
         api.get('/users/PedroMaravelli')
         .then((response) => {
             setName(response.data.name)
-        })
-    }
-    function getAvatarUrl () {
-        api.get('/users/PedroMaravelli')
-        .then((response) => {
             setAvatarUrl(response.data.avatar_url)
-        })
-    }
-    function getFollowers() {
-        api.get('/users/PedroMaravelli')
-        .then((response) => {
             setFollowers(response.data.followers)
-        })
-    }
-    function getBio() {
-        api.get('/users/PedroMaravelli')
-        .then((response) => {
             setBio(response.data.bio)
+
         })
     }
 
@@ -65,15 +52,22 @@ export function UserProvider({ children }: UserProviderProps){
 
         })
     }
+    function fetchSearchIssues (query?: string){
+        api.get(`/search/issues/q${query}/PedroMaravelli/github-blog`)
+        .then((response) =>{
+            setIssues(response.data)
+            console.log(response.data);
+            
+        })
+
+    }
 
     
 
     useEffect(() => {
-        getName()
-        getAvatarUrl()
-        getFollowers()
-        getBio()
+        getUserInfos()
         getIssues()
+        fetchSearchIssues()
        
 
     },[])
@@ -89,6 +83,7 @@ export function UserProvider({ children }: UserProviderProps){
             followers,
             avatarUrl,
             issues,
+            fetchSearchIssues,
         }}>
             {children}
         </UserContext.Provider>

@@ -22,9 +22,6 @@ export function IssueContent () {
             <p>
                 {issueContent}
             </p>
-
-            <span>{issueContent}</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet doloribus molestias harum alias? Ex culpa esse, non officiis distinctio cupiditate? Repellendus est aspernatur magnam! Nostrum illum unde cupiditate possimus voluptatibus?</p>
             
 
         </IssueContentContainer>
