@@ -17,6 +17,7 @@ export const CardPublication = styled(Link)`
     background-color: #112131;
     border-radius: 10px;
     width: 26rem;
+    height: 17rem ;
     padding: 2rem;
     text-decoration: none;
 
@@ -30,7 +31,9 @@ export const CardPublication = styled(Link)`
     div{
         display: flex;
         justify-content: space-between;
-        gap: 2rem ;
+        align-items: start;
+        margin-bottom: 1rem;
+
     }
     div p{
         color: #7B96B2;
@@ -39,9 +42,14 @@ export const CardPublication = styled(Link)`
     }
 
     p{
-        margin-top: 1rem;
+        
+        
         color: #AFC2D4;
         font-weight: 400;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
     }
 ;
 `

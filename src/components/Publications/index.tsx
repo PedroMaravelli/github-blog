@@ -27,7 +27,7 @@ export function Publications() {
                                 <CardPublication key={index}  to={`/publication/${issue.number}`}>
                                     <div>
                                         <span>{issue.title}</span>
-                                        <p>Há 1 dia</p>
+                                        <div><p>Há 1 dia</p></div>
                                     </div>
                                     <p>{issue.body}</p>
                                 </CardPublication>

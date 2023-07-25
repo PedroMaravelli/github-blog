@@ -3,7 +3,8 @@ import { PublicationsCount, SearchForm } from "./style";
 import {useForm} from 'react-hook-form'
 import * as z from 'zod'
 import { UserContext } from "../../../contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+
 
 
 const searchFormSchema = z.object({
@@ -16,19 +17,33 @@ export function SearchPublications() {
         resolver: zodResolver(searchFormSchema)
     })
 
-    const { fetchSearchIssues } = useContext(UserContext)
+    const { fetchSearchIssues, issues } = useContext(UserContext)
 
+    const [countPublications, setCountPublications] = useState<number>()
+
+
+    
     function handleSearchIssues(data: SearchFormInputs){
         fetchSearchIssues(data.query)
     }
 
+    const countIssues = () => {
+        issues.map((_issues, index) => {
+            setCountPublications(index + 1)
+        })
+
+    }
+
+    useEffect(() => {
+        countIssues()
+    }, [issues])
 
 
     return(
         <div>
             <PublicationsCount>
                 <span>Publicações</span>
-                <span>6 Publicações</span>
+                <span>{countPublications} Publicações</span>
 
             </PublicationsCount>
             <form method="get" onSubmit={handleSubmit(handleSearchIssues)}>
