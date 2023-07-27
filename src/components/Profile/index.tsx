@@ -21,7 +21,7 @@ export function Profile (){
                             
                                             <NameProfile>
                                                 <p>{name}</p>
-                                                <Link to='https://github.com/'>
+                                                <Link to='https://github.com/PedroMaravelli'>
                                                     Github
                                                     <ArrowSquareOut size={18}/>
                                                 </Link>
