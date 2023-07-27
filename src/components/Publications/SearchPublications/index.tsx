@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { PublicationsCount, SearchForm } from "./style";
+import { ButtonSearch, PublicationsCount, SearchForm } from "./style";
 import {useForm} from 'react-hook-form'
 import * as z from 'zod'
 import { UserContext } from "../../../contexts/UserContext";
@@ -23,8 +23,8 @@ export function SearchPublications() {
 
 
     
-    function handleSearchIssues(data: SearchFormInputs){
-        fetchSearchIssues(data.query)
+    async function handleSearchIssues(data: SearchFormInputs){
+        await fetchSearchIssues(data.query)
     }
 
     const countIssues = () => {
@@ -53,6 +53,8 @@ export function SearchPublications() {
                     {...register('query')}>
 
                 </SearchForm>
+                <ButtonSearch type="submit">Buscar</ButtonSearch>
+                
             </form>
 
         </div>

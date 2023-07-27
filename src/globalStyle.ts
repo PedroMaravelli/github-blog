@@ -7,5 +7,4 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Nunito', sans-serif;
     }
-
 `

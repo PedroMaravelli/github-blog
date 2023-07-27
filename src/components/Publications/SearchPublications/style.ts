@@ -17,7 +17,7 @@ export const PublicationsCount = styled.div`
 
 `
 export const SearchForm = styled.input`
-    width: 100%;
+    width: 90%;
     background-color: #040F1A ;
     margin-top: 0.8rem;
     border-radius: 6px;
@@ -27,4 +27,19 @@ export const SearchForm = styled.input`
     font-weight: 400;
     margin-bottom: 3rem;
     color: white;
+`
+export const ButtonSearch = styled.button`
+    margin-left: 1rem;
+    border-radius: 8px;
+    padding: 0.8rem;
+    background-color: #112131;
+    border: 1px solid #1C2F41;
+    font-weight:400;
+    
+
+    &:hover{
+        color:#C4D4E3 ;
+        
+    }
+
 `

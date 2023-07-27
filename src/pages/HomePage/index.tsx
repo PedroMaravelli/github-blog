@@ -6,10 +6,12 @@ import { HomePageContainer } from "./style";
 
 export function HomePage () {
     return (
-        <HomePageContainer>
-            <Header></Header>
-            <Profile></Profile>
-            <Publications></Publications>
-        </HomePageContainer>
+        <main>
+            <HomePageContainer>
+                <Header></Header>
+                <Profile></Profile>
+                <Publications></Publications>
+            </HomePageContainer>
+        </main>
     )
 }

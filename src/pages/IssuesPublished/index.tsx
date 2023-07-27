@@ -5,11 +5,12 @@ import { IssuesPublishedContainer } from "./style";
 
 export function IssuesPublished (){
     return(
-        <IssuesPublishedContainer>
-            <Header/>
-            <IssueTitle/>
-            <IssueContent/>
-        </IssuesPublishedContainer>
+            <IssuesPublishedContainer>
+                <Header/>
+                <IssueTitle/>
+                <IssueContent/>
+            </IssuesPublishedContainer>
+
     )
 
 }

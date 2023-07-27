@@ -53,12 +53,17 @@ export function UserProvider({ children }: UserProviderProps){
         })
     }
     function fetchSearchIssues (query?: string){
-        api.get(`/search/issues/q${query}/PedroMaravelli/github-blog`)
-        .then((response) =>{
-            setIssues(response.data)
+        
+        
+        api.get(`/search/issues?q=${query}%20repo:PedroMaravelli/github-blog`)
+            .then((response) =>{
+            setIssues(response.data.items)
             console.log(response.data);
             
         })
+
+        
+        
 
     }
 
@@ -67,8 +72,6 @@ export function UserProvider({ children }: UserProviderProps){
     useEffect(() => {
         getUserInfos()
         getIssues()
-        fetchSearchIssues()
-       
 
     },[])
 

@@ -7,13 +7,6 @@ import { UserContext } from "../../contexts/UserContext";
 export function Publications() {
 
     const { issues } = useContext(UserContext)
-    // const [ id, setId] = useState<number>(0)
-
-
-    // function directScreenIssues (id: number){
-    //     getIssuesForId(id)
-    //     return id
-    // }
     
     return(
         <PublicationsContainer>
